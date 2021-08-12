@@ -1,0 +1,32 @@
+<h1> <%= @restaurant.name %> </h1>
+
+<div class="alert-info p-2 m-2">
+  <p>Address : <%= @restaurant.address %></p>
+  <p>Phone : <%= @restaurant.phone_number %></p>
+  <p>Category : <%= @restaurant.category %></p>
+</div>
+
+<ul class="list-group mb-3">
+  <% @restaurant.reviews.each do |review| %>
+    <li class="d-flex list-custom mt-1 list-group-item">Note: <%=review.rating %> | Commentary: <%= review.content %></li>
+  <% end %>
+</ul>
+
+<h2>Post a comment</h2>
+
+<%= simple_form_for [@restaurant, @review] do |f| %>
+  <%= f.input :rating %>
+  <%= f.input :content %>
+  <%= f.submit class: "btn btn-primary mt-2" %>
+<% end %>
+
+<%= link_to restaurants_path, class: "btn btn-dark mt-2" do %>
+  <i class="fas fa-undo-alt"> Back to list</i>
+<% end %>
+
+
+<!--
+<%= link_to restaurant_reviews_path(@restaurant), class: "btn btn-primary" do %>
+  <i class="fas fa-plus"> New review</i>
+<% end %>
+-->

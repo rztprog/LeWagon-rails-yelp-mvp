@@ -1,0 +1,14 @@
+<h1>Restaurants</h1>
+<h2>New</h2>
+
+<%= simple_form_for(@restaurant) do |f| %>
+  <%= f.input :name %>
+  <%= f.input :address %>
+  <%= f.input :phone_number %>
+  <%= f.input :category %>
+  <%= f.submit class: "btn btn-primary mt-2" %>
+<% end %>
+
+<%= link_to restaurants_path,  class: "btn btn-light mt-2" do %>
+  <i class="fas fa-undo-alt"> Back to list</i>
+<% end %>

@@ -1,0 +1,14 @@
+<h1>Restaurants</h1>
+
+<ul class="list-group">
+  <% @restaurants.each do |restaurant| %>
+    <li class="d-flex list-custom mt-1"><%= link_to restaurant_path(restaurant), class: "list-group-item w-100" do %>
+    <%= restaurant.name %>
+    <% end %>
+    </li>
+  <% end %>
+</ul>
+
+<%= link_to new_restaurant_path, class: "btn btn-light mt-2" do %>
+  <i class="fas fa-plus"> Add a new restaurant</i>
+<% end %>

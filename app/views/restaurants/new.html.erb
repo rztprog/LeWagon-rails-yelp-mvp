@@ -5,10 +5,12 @@
   <%= f.input :name %>
   <%= f.input :address %>
   <%= f.input :phone_number %>
-  <%= f.input :category %>
-  <%= f.submit class: "btn btn-primary mt-2" %>
-<% end %>
+  <%= f.input :category, collection: ["chinese", "italian", "japanese", "french", "belgian"] %>
+<div>
+    <%= f.button :submit, "Add restaurant", class: "btn btn-primary mt-2" %>
+  <% end %>
 
-<%= link_to restaurants_path,  class: "btn btn-light mt-2" do %>
-  <i class="fas fa-undo-alt"> Back to list</i>
-<% end %>
+  <%= link_to restaurants_path,  class: "btn btn-dark mt-2" do %>
+    <i class="fas fa-undo-alt"> Back to list</i>
+  <% end %>
+</div>
